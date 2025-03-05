@@ -1,3 +1,6 @@
 [data_path]
 remote_path = '/files/data.csv'
 local_path = './output/data.csv'
+
+[log]
+log_dir = './logs/'
