@@ -1,12 +1,9 @@
 import os
 
-import seaborn
 from dotenv import load_dotenv
 
 from src.server import MyLinuxServer
 from src.utils import get_logger, load_toml_file
-
-seaborn.set_style("darkgrid")
 
 CONFIG_PATH = "./config.toml"
 
@@ -20,10 +17,10 @@ logger = get_logger(__name__, log_dir=log_dir)
 
 if __name__ == "__main__":
     # 从环境变量中读取服务器配置
-    ip = os.getenv("SV_IP")
-    port = int(os.getenv("SV_PORT"))
-    username = os.getenv("SV_USERNAME")
-    password = os.getenv("SV_PASSWORD")
+    ip = os.getenv("SERVER_IP")
+    port = int(os.getenv("SERVER_PORT"))
+    username = os.getenv("SERVER_USERNAME")
+    password = os.getenv("SERVER_PASSWORD")
 
     # 远端地址及本地地址（若不存在则创建）
     remote_path = config["data_path"]["remote_path"]
