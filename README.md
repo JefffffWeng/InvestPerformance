@@ -32,11 +32,17 @@ pip install -r requirements.txt
 # 准备配置文件
 cp config.example.toml config.toml
 
-# 配置环境变量（请替换实际值）
-echo "SERVER_IP=your_server_ip
+# 创建环境变量文件（请替换实际值）
+# powershell(windows)
+@"
+SERVER_IP=your_server_ip
 SERVER_PORT=22
 SERVER_USERNAME=admin
-SERVER_PASSWORD=secure_password" > .env
+SERVER_PASSWORD=secure_password
+"@ | Out-File -FilePath .env -Encoding UTF8
+
+# Git Bash / CMD / Linux/macOS
+printf "SERVER_IP=your_server_ip\nSERVER_PORT=22\nSERVER_USERNAME=admin\nSERVER_PASSWORD=secure_password\n" > .env
 
 # 运行程序
 python main.py

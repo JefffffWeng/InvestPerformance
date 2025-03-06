@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import os
 
 from dotenv import load_dotenv
@@ -8,7 +9,7 @@ from src.utils import get_logger, load_toml_file
 CONFIG_PATH = "./config.toml"
 
 # 加载配置文件和临时环境变量
-load_dotenv()
+load_dotenv(encoding="utf-8")
 config = load_toml_file(path=CONFIG_PATH)
 
 # 配置logs
